@@ -28,6 +28,7 @@ class ScanAnglePublisher(object):
 
         # if no valid measurements, don't publish anything
         if len(angles) == 0:
+            self.angle_pub.publish(float('nan'))
             return
 
         # if we have multiple measurements (i.e. multiple lasers hit one or
